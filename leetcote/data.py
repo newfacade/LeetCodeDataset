@@ -27,7 +27,7 @@ def read_problems(problem_file: str):
 
 def get_problem_file(version: str, split: str):
     ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    problem_file = os.path.join(ROOT, 'data', f'LeetCoTE-{version}-{split}-problems.jsonl')
+    problem_file = os.path.join(ROOT, 'data', f'LeetCodeDataset-{version}-{split}-problems.jsonl')
     print(problem_file)
     assert os.path.exists(problem_file), f'{problem_file} does not exist'
     return problem_file
