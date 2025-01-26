@@ -1,6 +1,6 @@
 # LeetCodeDataset
 
-LeetCodeDataset is a dataset consists of 1700+ Python leetcode problems that can be used for LLM training and evaluation.
+LeetCodeDataset is a dataset consists of Python leetcode problems that can be used for LLM training and evaluation.
 
 <p align="center">
     <a href="https://huggingface.co/datasets/newfacade/LeetCodeDataset">💻 Hugging Face Datasets</a>
