@@ -69,6 +69,16 @@ You can also run custom evaluation using the command `evaluate_functional_correc
 
 ## Citation
 
+```bibtex
+@software{xia2025leetcodedataset,
+  author = {Yunhui Xia, Wei Shen, Renbiao Liu, Yan Wang, Xiaonan He, Chuheng Zhang, Bruce},
+  title = {LeetCodeDataset},
+  year = {2025},
+  url = {https://github.com/newfacade/LeetCodeDataset},
+  version = {1.0},
+}
+```
+
 ## 🙏 Acknowledgement
 
 - [HumanEval](https://github.com/openai/human-eval)
