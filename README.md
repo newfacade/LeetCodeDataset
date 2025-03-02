@@ -29,8 +29,15 @@ Consistent with [human-eval](https://github.com/openai/human-eval) problem file 
 
 LeetCodeDataset can be used for training:
 
-1. We split LeetCodeDataset into train(1570 problems) and test(175 problems) dataset, order problems by `question_id` and use problems with bigger `question_id` for .
+1. We split LeetCodeDataset into train and test dataset, order problems by `question_id` and use problems with bigger `question_id` as the test set.
 2. `meta.query` as query, `meta.response` as response, train LLM using the train split.
+
+Number of problems with respect to each version and split:
+
+| version\split | train | test |
+|---------------|-------|------|
+| v1            | 1570  | 175  |
+| v2            | 1890  | 200  |
 
 ## Evaluation
 
@@ -41,17 +48,26 @@ $ git clone https://github.com/newfacade/LeetCodeDataset
 $ pip install -e .
 ```
 
-Evaluation example:
+LeetCodeDataset Evaluation example:
 
 ```
 $ eval_lct --version v1 --split test --input_file ./data/LeetCodeDataset-v1-test-problems.jsonl --predict_column meta.response
 ```
+
+You can also run custom evaluation using the command `evaluate_functional_correctness` (consistent with human-eval).
 
 ## Data Curation
 
 1. Use [python-leetcode](https://github.com/fspv/python-leetcode) to collect problems and corresponding metadata.
 2. Split problem description into two parts: description without examples and examples, concatenate description without examples and `lang_code` to form query, parse examples to get test case.
 3. Finally, extract completion from [doocs/leetcode](https://github.com/doocs/leetcode), test cases and completion are cross verified.
+
+## Blog/paper using LeetCodeDataset
+
+* [Pre-SFT: Let Models Decide on Supervisory Data for Fine-Tuning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
+* [Preference Modeling: Binary Discrimination Versus Imitation Learning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
+
+## Citation
 
 ## 🙏 Acknowledgement
 
