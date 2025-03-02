@@ -72,7 +72,7 @@ You can also run custom evaluation using the command `evaluate_functional_correc
 ```bibtex
 @software{xia2025leetcodedataset,
   author = {Yunhui Xia, Wei Shen, Renbiao Liu, Yan Wang, Xiaonan He, Chuheng Zhang, Bruce},
-  title = {LeetCodeDataset},
+  title = {LeetCodeDataset: A Dataset of Algorithmic Problems Suitable for LLM Training and Evaluation},
   year = {2025},
   url = {https://github.com/newfacade/LeetCodeDataset},
   version = {1.0},
