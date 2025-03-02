@@ -1,6 +1,7 @@
 import json
 import os
 import re
+import ast
 
 
 def read_jsonl(filename: str):
@@ -52,3 +53,28 @@ def extract_completion(text: str) -> str:
         return code_blocks[-1]
     else:
         return text
+
+
+def syntax_check(code: str) -> bool:
+    try:
+        ast.parse(code)
+        return True
+    except (SyntaxError, MemoryError):
+        return False
+
+
+def code_extract(text: str) -> str:
+    lines = text.split("\n")
+    longest_line_pair = (0, 0)
+    longest_so_far = 0
+
+    for i in range(len(lines)):
+        for j in range(i + 1, len(lines)):
+            current_lines = "\n".join(lines[i : j + 1])
+            if syntax_check(current_lines):
+                current_length = sum(1 for line in lines[i : j + 1] if line.strip())
+                if current_length > longest_so_far:
+                    longest_so_far = current_length
+                    longest_line_pair = (i, j)
+
+    return "\n".join(lines[longest_line_pair[0] : longest_line_pair[1] + 1])

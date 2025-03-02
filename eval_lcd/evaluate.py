@@ -7,7 +7,7 @@ import numpy as np
 import tqdm
 import fire
 
-from eval_lcd.data import read_jsonl, write_jsonl, read_problems, get_problem_file, extract_completion, get_nested
+from eval_lcd.data import read_jsonl, write_jsonl, read_problems, get_problem_file, extract_completion, get_nested, code_extract
 from eval_lcd.execution import check_correctness
 
 
@@ -119,7 +119,7 @@ def evaluate(
     result = []
     for sample in read_jsonl(input_file):
         text = get_nested(sample, predict_column)
-        sample['completion'] = extract_completion(text)
+        sample['completion'] = code_extract(text)
         result.append(sample)
     assert '.jsonl' in input_file, 'input_file must be a jsonl file'
     sample_file = input_file.replace('.jsonl', '_sample.jsonl')
