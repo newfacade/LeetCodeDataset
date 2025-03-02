@@ -62,7 +62,7 @@ You can also run custom evaluation using the command `evaluate_functional_correc
 2. Split problem description into two parts: description without examples and examples, concatenate description without examples and `lang_code` to form query, parse examples to get test case.
 3. Finally, extract completion from [doocs/leetcode](https://github.com/doocs/leetcode), test cases and completion are cross verified.
 
-## Blog/paper using LeetCodeDataset
+## Blogs/papers using LeetCodeDataset
 
 * [Pre-SFT: Let Models Decide on Supervisory Data for Fine-Tuning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
 * [Preference Modeling: Binary Discrimination Versus Imitation Learning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
