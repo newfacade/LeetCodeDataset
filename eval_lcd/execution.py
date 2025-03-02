@@ -25,7 +25,8 @@ def unsafe_execute(problem: Dict, completion: str, timeout: float, result):
 
         # Construct the check program and run it.
         check_program = (
-            problem["prompt"]
+            problem["prompt"] 
+            + "\n"  
             + completion
             + "\n"
             + problem["test"]

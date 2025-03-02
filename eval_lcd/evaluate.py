@@ -7,8 +7,8 @@ import numpy as np
 import tqdm
 import fire
 
-from leetcote.data import read_jsonl, write_jsonl, read_problems, get_problem_file, extract_completion, get_nested
-from leetcote.execution import check_correctness
+from eval_lcd.data import read_jsonl, write_jsonl, read_problems, get_problem_file, extract_completion, get_nested
+from eval_lcd.execution import check_correctness
 
 
 def estimate_pass_at_k(

@@ -5,10 +5,10 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name="leetcote",
-    py_modules=["leetcote"],
+    name="leetcodedataset",
+    py_modules=["leetcodedataset"],
     version="1.0",
-    description="",
+    description="LeetCodeDataset",
     packages=find_packages(),
     install_requires=[
         str(r)
@@ -18,8 +18,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "evaluate_functional_correctness = leetcote.evaluate_functional_correctness",
-            "eval_lct = leetcote.evaluate:cli",
+            "evaluate_functional_correctness = eval_lcd.evaluate_functional_correctness",
+            "eval_lcd = eval_lcd.evaluate:cli",
         ]
     }
 )
