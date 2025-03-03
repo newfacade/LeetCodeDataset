@@ -17,13 +17,13 @@ The dataset adheres to the [human-eval](https://github.com/openai/human-eval) pr
 - `completion`: The completion without the prompt.
 - `examples`: Test cases.
 - `meta`:
-    - `question_id`: The LeetCode problem's question ID.
-    - `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
-    - `lang_code`: The format of the completion.
-    - `question_title`: The problem description.
-    - `query`: The query.
-    - `response`: The correct response.
-    - `split`: The dataset split (e.g., train/test).
+  - `question_id`: The LeetCode problem's question ID.
+  - `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
+  - `lang_code`: The format of the completion.
+  - `question_title`: The problem description.
+  - `query`: The query.
+  - `response`: The correct response.
+  - `split`: The dataset split (e.g., train/test).
 
 ## Training
 
@@ -35,7 +35,7 @@ LeetCodeDataset can be used for training as follows:
 The number of problems in each version and split is as follows:
 
 | Version | Train | Test |
-|---------|-------|------|
+| ------- | ----- | ---- |
 | v1      | 1570  | 175  |
 | v2      | 1890  | 200  |
 
@@ -85,7 +85,7 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
   title = {LeetCodeDataset: A Dataset of Algorithmic Problems Suitable for LLM Training and Evaluation},
   year = {2025},
   url = {https://github.com/newfacade/LeetCodeDataset},
-  version = {1.0},
+  version = {0.1.0},
 }
 ```
 

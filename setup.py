@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 setup(
     name="leetcodedataset",
     py_modules=["leetcodedataset"],
-    version="1.0",
+    version="0.1.0",
     description="LeetCodeDataset",
     packages=find_packages(),
     install_requires=[
