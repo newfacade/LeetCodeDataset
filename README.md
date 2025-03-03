@@ -74,7 +74,7 @@ You can also run custom evaluation using the command `evaluate_functional_correc
 
 ## Blog/papers using LeetCodeDataset
 
-* [Pre-SFT: Let Models Decide on Supervisory Data for Fine-Tuning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
+* [Pre-SFT: Let Models Decide on Supervisory Data for Fine-Tuning](https://www.notion.so/swtheking/150d3429a80780c394dfea632713c1b7?v=150d3429a8078171a969000c3ec41f2a)
 * [Preference Modeling: Binary Discrimination Versus Imitation Learning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
 
 ## Citation
