@@ -118,6 +118,7 @@ def evaluate(
     # prepare sample file
     result = []
     for sample in read_jsonl(input_file):
+        assert 'task_id' in sample, f'`task_id` should be specified in {input_file}'
         text = get_nested(sample, predict_column)
         sample['completion'] = code_extract(text)
         result.append(sample)
