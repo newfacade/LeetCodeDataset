@@ -51,8 +51,18 @@ $ pip install -e .
 LeetCodeDataset Evaluation example:
 
 ```
-$ eval_lct --version v1 --split test --input_file ./data/LeetCodeDataset-v1-test-problems.jsonl --predict_column meta.response
+$ eval_lct --version v1 \
+           --split test \
+           --input_file ./data/LeetCodeDataset-v1-test-problems.jsonl \
+           --predict_column meta.response
 ```
+
+explain params:
+
+* `version`: v1 or v2
+* `split`: test or train
+* `input_file`: a jsonl file to be evaluated, contains `task_id` and prediction for the specified LeetCodeDataset
+* `predict_column`: column name of prediction in `input_file`, e.g. `{'task_id': 'two_sum', 'output': 'To solve the problem of finding two indices ...'}` uses `--predict_column output`
 
 You can also run custom evaluation using the command `evaluate_functional_correctness` (consistent with human-eval).
 
