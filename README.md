@@ -72,16 +72,19 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 2. Split the problem description into two parts: the description without examples and the examples. Concatenate the description without examples and `lang_code` to form the query, and parse the examples to extract test cases.
 3. Finally, extract the completion from [doocs/leetcode](https://github.com/doocs/leetcode). Test cases and completion are cross-verified.
 
-## Blog/Papers Using LeetCodeDataset
+## Paper/blog/projects Using LeetCodeDataset
 
 - [Pre-SFT: Let Models Decide on Supervisory Data for Fine-Tuning](https://www.notion.so/swtheking/150d3429a80780c394dfea632713c1b7?v=150d3429a8078171a969000c3ec41f2a)
 - [Preference Modeling: Binary Discrimination Versus Imitation Learning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
+- [POLICY FILTRATION IN RLHF TO FINE-TUNE LLM FOR CODE GENERATION](https://arxiv.org/pdf/2409.06957)
+- [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/pdf/2502.13943)
+- [code-r1](https://github.com/ganler/code-r1)
 
 ## Citation
 
 ```bibtex
 @software{xia2025leetcodedataset,
-  author = {Yunhui Xia, Wei Shen, Renbiao Liu, Yan Wang, Xiaonan He, Chuheng Zhang, Bruce},
+  author = {Yunhui Xia, Wei Shen, Renbiao Liu, Yan Wang, Siyue Wu, Xiaonan He},
   title = {LeetCodeDataset: A Dataset of Algorithmic Problems Suitable for LLM Training and Evaluation},
   year = {2025},
   url = {https://github.com/newfacade/LeetCodeDataset},
