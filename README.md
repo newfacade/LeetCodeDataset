@@ -95,4 +95,5 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 ## 🙏 Acknowledgment
 
 - [HumanEval](https://github.com/openai/human-eval)
+- [OpenCodeEval](https://github.com/richardodliu/OpenCodeEval)
 - [EvalPlus](https://github.com/evalplus/evalplus)
