@@ -78,6 +78,7 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 - [Preference Modeling: Binary Discrimination Versus Imitation Learning](https://swtheking.notion.site/?v=182d3429a807812fb1e1000c2557a107)
 - [POLICY FILTRATION IN RLHF TO FINE-TUNE LLM FOR CODE GENERATION](https://arxiv.org/pdf/2409.06957)
 - [AdaptiveStep: Automatically Dividing Reasoning Step through Model Confidence](https://arxiv.org/pdf/2502.13943)
+- [Breaking the Attention Trap in Code LLMs: A Rejection Sampling Approach to Enhance Code Execution Prediction](https://openreview.net/pdf?id=4l2hCRYHuo)
 - [code-r1](https://github.com/ganler/code-r1)
 
 ## Citation
