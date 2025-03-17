@@ -31,7 +31,7 @@ The dataset adheres to the [human-eval](https://github.com/openai/human-eval) pr
 LeetCodeDataset can be used for training as follows:
 
 1. The dataset is split into training and test sets. Problems are ordered by `question_id`, with those having larger `question_id` values used for the test set.
-2. Use `meta.query` as the query and `meta.response` as the response to train the LLM using the training split.
+2. Use `query` as the query and `response` as the response to train the LLM using the training split.
 
 The number of problems in each version and split is as follows:
 
@@ -70,9 +70,19 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 
 ## Data Curation
 
-1. Use [python-leetcode](https://github.com/fspv/python-leetcode) to collect problems and their metadata.
-2. Split the problem description into two parts: the description without examples and the examples. Concatenate the description without examples and `lang_code` to form the query, and parse the examples to extract test cases.
-3. Finally, extract the completion from [doocs/leetcode](https://github.com/doocs/leetcode). Test cases and completion are cross-verified.
+1. Metadata Acquisition, including:
+    – question id: unique numeric identifier
+    – question: url-related string (serves as primary task id)
+    – problem description
+    – starter code
+2. Canonical Solution Verification
+   - Retrieved reference solutions from GitHub open-source datasets
+   - Validated solution correctness through LeetCode’s official execution environment
+3. Entry Point Identification: Implemented text pattern matching to detect target functions
+4. Test Case Generation
+5. Automated Evaluation Framework
+   - Developed sandboxed execution environment for safe code evaluation
+   - Implemented trial-and-error mechanism to Execute canonical solutions against generated inputs
 
 ## Paper/blog/projects Using LeetCodeDataset
 
