@@ -108,13 +108,16 @@ def evaluate_functional_correctness(
 
 def evaluate(
         input_file: str, 
-        predict_column: str = 'predict',
-        version: str = 'v1',
+        predict_column: str = 'response',
+        version: str = 'v0.3.0',
         split: str = 'test',
-        k: str = "1,10,20,100",):
+        k: str = "1,10,20,100"):
     """
     Evaluate the functional correctness of the LeetCoTE problems.
     """
+    problem_file = get_problem_file(version, split)
+    k = list(map(int, k.split(",")))
+
     # prepare sample file
     result = []
     for sample in read_jsonl(input_file):
@@ -125,9 +128,6 @@ def evaluate(
     assert '.jsonl' in input_file, 'input_file must be a jsonl file'
     sample_file = input_file.replace('.jsonl', '_sample.jsonl')
     write_jsonl(sample_file, result)
-    
-    problem_file = get_problem_file(version, split)
-    k = list(map(int, k.split(",")))
 
     results = evaluate_functional_correctness(sample_file, problem_file, k)
     print(results)

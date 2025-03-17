@@ -33,10 +33,19 @@ def read_problems(problem_file: str):
     return {task['task_id']: task for task in read_jsonl(problem_file)}
 
 
+def decompress_gz(input_file: str):
+    output_file = input_file[:-3]
+    with gzip.open(input_file, 'rb') as f_in:
+        with open(output_file, 'wb') as f_out:
+            f_out.write(f_in.read())
+
+
 def get_problem_file(version: str, split: str):
-    url, cache_path = get_dataset_metadata(version=version, split=split)
-    make_cache(gzip_url=url, cache_path=cache_path)
-    return cache_path
+    ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    problem_file = os.path.join(ROOT, 'data', f'LeetCodeDataset-{version}-{split}.jsonl')
+    if not os.path.exists(problem_file):
+        decompress_gz(problem_file + '.gz')
+    return problem_file
 
 
 def get_nested(item: dict, path: str):
@@ -87,7 +96,7 @@ def code_extract(text: str) -> str:
 
 def get_dataset_metadata(version: str, split: str):
     assert split in {'train', 'test'}
-    url = f"https://github.com/newfacade/leetcode_release/download/{version}/LeetCodeDataset-{version}-{split}.jsonl.gz"
+    url = f"https://github.com/newfacade/leetcode_release/raw/refs/tags/{version}/LeetCodeDataset-{version}-{split}.jsonl.gz"
     cache_path = os.path.join(CACHE_DIR, f"LeetCodeDataset-{version}-{split}.jsonl")
     return url, cache_path
 
