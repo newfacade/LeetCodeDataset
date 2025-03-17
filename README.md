@@ -23,7 +23,7 @@ The dataset adheres to the [human-eval](https://github.com/openai/human-eval) pr
   - `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
   - `lang_code`: The format of the completion.
   - `question_title`: The problem description.
-  - `tags`: E.g. ['Array', 'Hash-Table']
+  - `tags`: E.g. ['Array', 'Hash Table']
   - `estimated_date`: Estimated release date
 
 ## Training
@@ -56,7 +56,7 @@ pip install -e .
 eval_lcd --version v0.3.0 \
          --split test \
          --input_file ./data/LeetCodeDataset-v0.3.0-test.jsonl \
-         --predict_column response
+         --predict_column completion
 ```
 
 ### Explanation of Parameters
