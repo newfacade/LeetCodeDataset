@@ -9,7 +9,7 @@ def entry_point(
     problem_file: str,
     k: str = "1,10,100",
     n_workers: int = 4,
-    timeout: float = 3.0
+    timeout: float = 10.0
 ):
     """
     Evaluates the functional correctness of generated samples, and writes

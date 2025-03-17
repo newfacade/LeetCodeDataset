@@ -2,6 +2,13 @@ import json
 import os
 import re
 import ast
+import gzip
+
+import tempdir
+import wget
+from appdirs import user_cache_dir
+
+CACHE_DIR = user_cache_dir("leetcodedataset")
 
 
 def read_jsonl(filename: str):
@@ -27,11 +34,9 @@ def read_problems(problem_file: str):
 
 
 def get_problem_file(version: str, split: str):
-    ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    problem_file = os.path.join(ROOT, 'data', f'LeetCodeDataset-{version}-{split}-problems.jsonl')
-    print(problem_file)
-    assert os.path.exists(problem_file), f'{problem_file} does not exist'
-    return problem_file
+    url, cache_path = get_dataset_metadata(version=version, split=split)
+    make_cache(gzip_url=url, cache_path=cache_path)
+    return cache_path
 
 
 def get_nested(item: dict, path: str):
@@ -78,3 +83,30 @@ def code_extract(text: str) -> str:
                     longest_line_pair = (i, j)
 
     return "\n".join(lines[longest_line_pair[0] : longest_line_pair[1] + 1])
+
+
+def get_dataset_metadata(version: str, split: str):
+    assert split in {'train', 'test'}
+    url = f"https://github.com/newfacade/leetcode_release/download/{version}/LeetCodeDataset-{version}-{split}.jsonl.gz"
+    cache_path = os.path.join(CACHE_DIR, f"LeetCodeDataset-{version}-{split}.jsonl")
+    return url, cache_path
+
+
+def make_cache(gzip_url: str, cache_path: str):
+    if not os.path.exists(cache_path):
+        print(f"Downloading dataset from {gzip_url}")
+
+        with tempdir.TempDir() as tmpdir:
+            tmp_gz_path = os.path.join(tmpdir, f"data.jsonl.gz")
+            wget.download(gzip_url, tmp_gz_path)
+
+            with gzip.open(tmp_gz_path, "rb") as f:
+                data = f.read().decode("utf-8")
+
+        # create CACHE_DIR if not exists
+        if not os.path.exists(CACHE_DIR):
+            os.makedirs(CACHE_DIR)
+
+        # Write the original data file to CACHE_DIR
+        with open(cache_path, "w") as f:
+            f.write(data)
