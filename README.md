@@ -37,9 +37,9 @@ The number of problems in each version and split is as follows:
 
 | Version | Train | Test |
 | ------- | ----- | ---- |
-| v1      | 1570  | 175  |
-| v2      | 1890  | 200  |
-| v3      | 2386  | 386  |
+| v0.1.0      | 1570  | 175  |
+| v0.2.0      | 1890  | 200  |
+| v0.3.0      | 2386  | 386  |
 
 ## Evaluation
 
