@@ -15,15 +15,16 @@ The dataset adheres to the [human-eval](https://github.com/openai/human-eval) pr
 - `entry_point`: The function name used for evaluation.
 - `test`: A function to check test cases.
 - `completion`: The completion without the prompt.
-- `examples`: Test cases.
+- `query`: The query including problem description and starter code.
+- `response`: The correct response.
+- `input_output`: Test cases.
 - `meta`:
   - `question_id`: The LeetCode problem's question ID.
   - `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
   - `lang_code`: The format of the completion.
   - `question_title`: The problem description.
-  - `query`: The query.
-  - `response`: The correct response.
-  - `split`: The dataset split (e.g., train/test).
+  - `tags`: E.g. ['Array', 'Hash-Table']
+  - `estimated_date`: Estimated release date
 
 ## Training
 
@@ -36,8 +37,9 @@ The number of problems in each version and split is as follows:
 
 | Version | Train | Test |
 | ------- | ----- | ---- |
-| v1      | 1570  | 175  |
-| v2      | 1890  | 200  |
+| v0.1.0      | 1570  | 175  |
+| v0.2.0      | 1890  | 200  |
+| v0.3.0      | 2386  | 386  |
 
 ## Evaluation
 
@@ -51,15 +53,15 @@ pip install -e .
 ### LeetCodeDataset Evaluation Example
 
 ```bash
-eval_lcd --version v1 \
+eval_lcd --version v0.3.0 \
          --split test \
-         --input_file ./data/LeetCodeDataset-v1-test-problems.jsonl \
-         --predict_column meta.response
+         --input_file ./data/LeetCodeDataset-v0.3.0-test.jsonl \
+         --predict_column response
 ```
 
 ### Explanation of Parameters
 
-- `version`: v1 or v2.
+- `version`: v0.1.0 or v0.2.0 or v0.3.0.
 - `split`: test or train.
 - `input_file`: A JSONL file containing the problems and predictions for the specified LeetCodeDataset, with `task_id` and prediction.
 - `predict_column`: The column name of the prediction in `input_file`, e.g., `{'task_id': 'two_sum', 'output': 'To solve the problem of finding two indices ...'}` uses `--predict_column output`.
