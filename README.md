@@ -97,7 +97,7 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 
 ```bibtex
 @software{xia2025leetcodedataset,
-  author = {Yunhui Xia, Wei Shen, Renbiao Liu, Yan Wang, Siyue Wu, Xiaonan He},
+  author = {Yunhui Xia, Wei Shen, Jason Klein Liu, Yan Wang, Siyue Wu, Xiaonan He},
   title = {LeetCodeDataset: A Dataset of Algorithmic Problems Suitable for LLM Training and Evaluation},
   year = {2025},
   url = {https://github.com/newfacade/LeetCodeDataset},
