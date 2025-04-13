@@ -11,20 +11,19 @@ LeetCodeDataset is a dataset comprising Python LeetCode problems designed for tr
 The dataset adheres to the [human-eval](https://github.com/openai/human-eval) problem file format.
 
 - `task_id`: The LeetCode problem's question title slug, which corresponds to the problem URL.
+- `question_id`: The LeetCode problem's question ID.
+- `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
+- `tags`: E.g. ['Array', 'Hash Table']
+- `problem_description`: The problem description, including examples and constrains.
+- `starter_code`: The starter code to solve the problem.
+- `estimated_date`: The estimated release date.
 - `prompt`: The prefix for the completion, such as basic imports.
+- `completion`: The completion without the prompt.
 - `entry_point`: The function name used for evaluation.
 - `test`: A function to check test cases.
-- `completion`: The completion without the prompt.
+- `input_output`: Test cases.
 - `query`: The query including problem description and starter code.
 - `response`: The correct response.
-- `input_output`: Test cases.
-- `meta`:
-  - `question_id`: The LeetCode problem's question ID.
-  - `difficulty`: The problem's difficulty level (Easy, Medium, or Hard).
-  - `lang_code`: The format of the completion.
-  - `question_title`: The problem description.
-  - `tags`: E.g. ['Array', 'Hash Table']
-  - `estimated_date`: Estimated release date
 
 ## Training
 
@@ -40,6 +39,7 @@ The number of problems in each version and split is as follows:
 | v0.1.0      | 1570  | 175  |
 | v0.2.0      | 1890  | 200  |
 | v0.3.0      | 2386  | 386  |
+| v0.3.1      | 2641  | 228  |
 
 ## Evaluation
 
@@ -61,7 +61,7 @@ eval_lcd --version v0.3.0 \
 
 ### Explanation of Parameters
 
-- `version`: v0.1.0 or v0.2.0 or v0.3.0.
+- `version`: dataset version.
 - `split`: test or train.
 - `input_file`: A JSONL file containing the problems and predictions for the specified LeetCodeDataset, with `task_id` and prediction.
 - `predict_column`: The column name of the prediction in `input_file`, e.g., `{'task_id': 'two_sum', 'output': 'To solve the problem of finding two indices ...'}` uses `--predict_column output`.
