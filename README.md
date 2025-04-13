@@ -53,9 +53,9 @@ pip install -e .
 ### LeetCodeDataset Evaluation Example
 
 ```bash
-eval_lcd --version v0.3.0 \
+eval_lcd --version v0.3.1 \
          --split test \
-         --input_file ./data/LeetCodeDataset-v0.3.0-test.jsonl \
+         --input_file ./data/LeetCodeDataset-v0.3.1-test.jsonl \
          --predict_column completion
 ```
 
