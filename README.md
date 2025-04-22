@@ -96,12 +96,14 @@ You can also perform custom evaluations using the `evaluate_functional_correctne
 ## Citation
 
 ```bibtex
-@software{xia2025leetcodedataset,
-  author = {Yunhui Xia, Wei Shen, Jason Klein Liu, Yan Wang, Siyue Wu, Xiaonan He},
-  title = {LeetCodeDataset: A Dataset of Algorithmic Problems Suitable for LLM Training and Evaluation},
-  year = {2025},
-  url = {https://github.com/newfacade/LeetCodeDataset},
-  version = {0.1.0},
+@misc{xia2025leetcodedatasettemporaldatasetrobust,
+      title={LeetCodeDataset: A Temporal Dataset for Robust Evaluation and Efficient Training of Code LLMs}, 
+      author={Yunhui Xia and Wei Shen and Yan Wang and Jason Klein Liu and Huifeng Sun and Siyue Wu and Jian Hu and Xiaolong Xu},
+      year={2025},
+      eprint={2504.14655},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2504.14655}, 
 }
 ```
 
