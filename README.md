@@ -3,7 +3,7 @@
 LeetCodeDataset is a dataset comprising Python LeetCode problems designed for training and evaluating Large Language Models (LLMs).
 
 <p align="center">
-    <a href="https://huggingface.co/datasets/newfacade/LeetCodeDataset">💻 Hugging Face Datasets</a>  <a href="https://arxiv.org/abs/2504.14655">Paper</a>
+    <a href="https://huggingface.co/datasets/newfacade/LeetCodeDataset">💻 Hugging Face Datasets</a>  <a href="https://arxiv.org/abs/2504.14655">📄 Paper</a>
 </p>
 
 ## Data Fields
